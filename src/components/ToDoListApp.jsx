@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TodoApp = () => {
+const ToDoListApp = () => {
   //Creamos los estados para una tarea en concreto y otro para la lista completa de tareas
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState(() => {
@@ -64,4 +64,4 @@ const TodoApp = () => {
   );
 };
 
-export default TodoApp;
+export default ToDoListApp;
