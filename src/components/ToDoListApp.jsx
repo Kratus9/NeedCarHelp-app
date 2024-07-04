@@ -34,32 +34,33 @@ const ToDoListApp = () => {
 
   return (
     <div>
-      <div>
-        <h1>Lista de Tareas</h1>
-        <input
-          type="text"
-          className=""
-          value={task}
-          onChange={(e) => handleInputChange(e)}
-          placeholder="Añade una tarea"
-        />
-        <button className="btn btn-primary" onClick={handleAddTask}>
-          Añadir Tarea
+      <div className="container mt-5 bg-dark text-light p-5">
+        <h1 className="text-center mb-4">Lista de Tareas</h1>
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            value={task}
+            onChange={(e) => handleInputChange(e)}
+            placeholder="Añade una tarea nueva"
+          />
+          <button className="btn btn-primary" onClick={handleAddTask}>
+            Añadir Tarea
+          </button>
+        </div>
+        <ul className="list-group mb-3">
+          {taskList.map((task, index) => {
+            return (
+              <li key={index} className="list-group-item">
+                {task}
+              </li>
+            );
+          })}
+        </ul>
+        <button className="btn btn-danger" onClick={handleClearTaskList}>
+          Limpiar Lista
         </button>
       </div>
-      <ul className="">
-        {" "}
-        {taskList.map((task, index) => {
-          return (
-            <li key={index} className="">
-              {task}
-            </li>
-          );
-        })}
-      </ul>
-      <button className="btn btn-danger" onClick={handleClearTaskList}>
-        Limpiar Lista
-      </button>
     </div>
   );
 };
