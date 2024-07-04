@@ -24,7 +24,15 @@ const ToDoListApp = () => {
   };
 
   const handleInputChange = (e) => {
+    //Creamos la función para actualizar el valor del input cada vez que detecte un cambio
     setTask(e.target.value);
+  };
+
+  const handleDeleteTask = (index) => {
+    //Creamos la función para borrar una tarea concreta de la lista
+    setTaskList((prevTaskList) => {
+      return prevTaskList.filter((_, i) => i !== index);
+    });
   };
 
   const handleClearTaskList = () => {
@@ -53,6 +61,12 @@ const ToDoListApp = () => {
             return (
               <li key={index} className="list-group-item">
                 {task}
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => handleDeleteTask(index)}
+                >
+                  Eliminar Tarea
+                </button>
               </li>
             );
           })}
