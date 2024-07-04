@@ -79,7 +79,7 @@ const ToDoListApp = () => {
         <ul className="list-group mb-3">
           {taskList.map((task, index) => {
             return (
-              <li key={index} className="list-group-item">
+              <li key={index} className="list-group-item d-flex justify-content-between align-items-center bg-secondary text-light">
                 {editingIndex === index ? (
                   <input
                     type="text"
